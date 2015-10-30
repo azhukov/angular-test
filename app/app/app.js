@@ -26,10 +26,10 @@ angular
         templateUrl: 'app/main/main.html',
         controller: 'MainCtrl'
       })
-      /*.when('/about', {
-        templateUrl: 'views/about.html',
-        controller: 'AboutCtrl'
-      })*/
+      .when('/order', {
+        templateUrl: 'app/order/order.html',
+        controller: 'OrderCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });

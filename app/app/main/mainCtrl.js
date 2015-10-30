@@ -17,10 +17,8 @@ angular.module('jstestApp')
     });
     $scope.order = orderModel;
 
-    $scope.addToOrder = function addToOrder(meal) {
+    $scope.addToOrder = function (meal) {
       $scope.order.add(meal);
-
-      //alert(meal.name);
     }
 
   }

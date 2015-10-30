@@ -1,45 +1,23 @@
-{{order.getTotal()}}
-
-
-<!--div class="container-fluid" >
-  <div class="row header">
-    <div class="col-md-12 text-center">
-      <button class="btn btn-default">It's time to order some delicious food</button>
-    </div>
-  </div>
-  <div class="row body">
-    <div class="col-xs-12">
-      <div class="title">
-        <span>Your Delicious Restaurant</span>
-      </div>
-
-      <div class="description">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium ipsam magni molestiae numquam officia pariatur quas reiciendis<br>
-        <button class="btn btn-primary">Add To Your Order</button>
-        <div class="notes">
-          3 options availiable
-        </div>
-      </div>
-    </div>
-  </div>
-</div-->
-
-
 <div class="container-fluid">
   <div class="row header">
-    <div class="col-xs-12 text-center"><button>It's time to order some delicious food</button></div>
+    <div class="col-xs-12 text-center">
+      <div class="col-md-12 text-center">
+        <a ng-href="#/order"><button class="btn btn-red">It's time to order some delicious food</button><a>
+      </div>
+    </div>
   </div>
 
   <div class="row body" ng-repeat="meal in meals">
     <div class="col-xs-12">
-
-        <h4 class="name">{{meal.name}}</h4>
+      <h4 class="title">{{meal.name}}</h4>
+      <div class="item text-center">
         <div class="price">5.90</div>
         <img class="image" ng-src="{{meal.url}}">
-        <div class="description">{{meal.description}}<BR>
-          <button class="btn btn-primary"ng-click="addToOrder(meal)">Add To Your Order</button>
+        <div class="description">
+          {{meal.description}}<br>
+          <button class="btn btn-primary" ng-click="addToOrder(meal)">Add To Your Order</button>
         </div>
-
+      </div>
     </div>
   </div>
 </div>
