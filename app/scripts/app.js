@@ -15,7 +15,9 @@ angular
     'ngResource',
     'ngRoute',
     'ngSanitize',
-    'ngTouch'
+    'ngTouch',
+    'test-app.common.models.meal-model',
+    'test-app.common.models.order-model'
   ])
   .config(function ($routeProvider) {
     $routeProvider

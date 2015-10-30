@@ -1,8 +1,11 @@
+{{order.getTotal()}}
+
 <ul class="meals">
     <li class="meal" ng-repeat="meal in menu.meals">
         <h4 class="name">{{meal.name}}</h4>
-        <img class="image" ng-src="{{meal.primaryImageUrl}}">
+        <img class="image" ng-src="{{meal.url}}">
         <p class="description">{{meal.description}}</p>
         <p class="price">{{meal.price}}</p>
+        <p><button ng-click="addToOrder(meal)">Add To Your Order</button></p>
     </li>
 </ul>
