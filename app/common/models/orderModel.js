@@ -11,7 +11,7 @@ angular.module('test-app.common.models.order-model', []).
     this.otherHas = {};
 
     this.getTotal = function() {
-      return total;
+      return (total/100).toFixed(2);
     };
 
     this.add = function(meal) {
@@ -31,7 +31,7 @@ angular.module('test-app.common.models.order-model', []).
         groupHash[meal.id] = groupHash[meal.id] + 1;
       }
 
-      total += meal.price;
+      total += this.Math.round(meal.price * 100);
 
       save();
     };
@@ -50,7 +50,7 @@ angular.module('test-app.common.models.order-model', []).
       if(cnt) {
         cnt--;
         groupHash[meal.id] = cnt;
-        total -= meal.price;
+        total -= this.Math.round(meal.price * 100);
 
         if(cnt == 0) {
           groupHash[meal.id] = null;
