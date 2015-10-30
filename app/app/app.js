@@ -18,6 +18,7 @@ angular
     'ngTouch',
     //'ui.router',
     'LocalStorageModule',
+    'test-app.common.directives.order-directive',
     'test-app.common.models.meal-model',
     'test-app.common.models.order-model'
   ])

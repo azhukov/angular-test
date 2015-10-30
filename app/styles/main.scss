@@ -1,6 +1,8 @@
 //@import 'scales';
 //@import 'typography';
 
+/////// main view (TO DO :put in separate view in the specific folder)
+
 .header {
   background-color: #C83C3B;
   padding: 10px;
@@ -8,8 +10,8 @@
 
 .body {
   background-color: #F6F6F5;
+  padding-top: 54px;
 }
-
 .title {
   font-weight: bold;
   color: #525252;
@@ -49,4 +51,72 @@
   margin-top: 20px;
   width: 100%;
   padding: 0 10px;
+}
+
+
+
+///// order directive (TO DO: put in separate file in the directive folder)
+
+.my-order {
+  background-color: #C83C3B;
+  padding: 10px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 20;
+  transition: max-height 1s;
+
+
+  .cart {
+    background-color: #C83C3B;
+    padding: 10px 20px;
+
+  }
+  .cart-title {
+    color: #fff;
+    padding: 10px;
+  }
+  .items {
+    margin-top: 40px;
+  }
+
+  .btn {
+    border-radius: 0;
+  }
+
+  .meal-detail {
+    background-color: #D6504F;
+    border: 1px solid #9D1A1B;
+    font-size: 16px;
+  }
+  .meal-detail:first-child {
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+  }
+  .meal-detail:last-child {
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+  }
+  .cart-options {
+    width: 1%;
+    float: left;
+    margin-right: 30px;
+    text-align: center;
+    padding-right: 5px;
+    padding-left: 5px;
+  }
+  .btn-white {
+    background-color: #fff;
+    color: #f00;
+  }
+  .button {
+    margin-top: 20px;
+  }
+  .button button {
+
+    width: 100%;
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
 }

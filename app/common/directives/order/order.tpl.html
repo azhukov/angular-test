@@ -1,0 +1,72 @@
+<div class="row my-order">
+  <div class="col-xs-12 text-center">
+    <div class="col-xs-12 text-center" ng-show="order.isEmpty()">
+      <div>It's time to order some delicious food</div>
+    </div>
+
+    <div class=" col-xs-offset-9 text-center" ng-show="!order.isEmpty()">
+      <button class="btn btn-red" ng-click="switchStatus()">{{order.getTotal()}}</button>
+    </div>
+  </div>
+
+  <div class="row cart" ng-hide="isCollapsed">
+    <div class="row cart-title">
+      <div class="col-xs-12">
+        <h4>Your Order</h4>
+        <i>A Delicious Restaurant</i>
+      </div>
+    </div>
+    <div class="row items">
+
+      <div class="col-xs-12">
+        <i class="item-type clearfix">{{order.main.length}} main</i>
+        <div class="row meal-detail" ng-repeat="meal in order.main" >
+          <div class="col-xs-10 cart-title">
+            <div class="cart-options">
+              <div><a ng-click="order.add(meal)">+</a></div>
+              <div>{{order.mainHash[meal.id]}}</div>
+              <div><a ng-click="order.remove(meal)">-</a></div>
+            </div>
+            <div class="cart-title">
+              {{meal.name}}<br>
+            </div>
+          </div>
+          <div class="col-xs-2 cart-title">
+            <div class="cart-title">{{meal.price}}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row items">
+      <div class="col-xs-12">
+        <i class="item-type clearfix">{{order.other.length}} other</i>
+        <div class="row meal-detail" ng-repeat="meal in order.other">
+          <div class="col-xs-10 cart-title">
+            <div class="cart-options">
+              <div><a ng-click="order.add(meal)">+</a></div>
+              <div>{{order.mainHash[meal.id]}}</div>
+              <div><a ng-click="order.remove(meal)">-</a></div>
+            </div>
+            <div class="cart-title">
+              {{meal.name}}<br>
+            </div>
+          </div>
+          <div class="col-xs-2 cart-title">
+            <div class="cart-title">{{meal.price}}</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <div class="row button">
+      <div class="col-xs-8 text-center">
+        <button class="btn btn-white">Confirm Your Order</button>
+      </div>
+      <div class="col-xs-4 text-center">
+        <button class="btn btn-red" ng-click="switchStatus()">{{order.getTotal()}}</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
