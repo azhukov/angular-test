@@ -16,6 +16,7 @@ angular
     'ngRoute',
     'ngSanitize',
     'ngTouch',
+    //'ui.router',
     'test-app.common.models.meal-model',
     'test-app.common.models.order-model'
   ])

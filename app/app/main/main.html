@@ -1,11 +1,56 @@
 {{order.getTotal()}}
 
-<ul class="meals">
-    <li class="meal" ng-repeat="meal in menu.meals">
+
+<div class="container-fluid" >
+  <div class="row header">
+    <div class="col-md-12 text-center">
+      <button class="btn btn-default">It's time to order some delicious food</button>
+    </div>
+  </div>
+  <div class="row body">
+    <div class="col-xs-12">
+      <div class="title">
+        <span>Your Delicious Restaurant</span>
+      </div>
+
+      <div class="description">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium ipsam magni molestiae numquam officia pariatur quas reiciendis<br>
+        <button class="btn btn-primary">Add To Your Order</button>
+        <div class="notes">
+          3 options availiable
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!--div class="container-fluid">
+  <div class="row header">
+    <div class="col-xs-12 text-center"><button>It's time to
+      order some delicious food</button></div>
+  </div>
+
+  <div class="row body" ng-repeat="meal in meals">
+    <div class="col-xs-12">
+
+        <h4 class="name">{{meal.name}}</h4>
+        <div class="price">5.90</div>
+        <img class="image" ng-src="{{meal.url}}">
+        <div class="description">{{meal.description}}<BR>
+          <button class="btn btn-primary"ng-click="addToOrder(meal)">Add To Your Order</button>
+        </div>
+
+    </div>
+  </div>
+</div-->
+
+<!--ul class="meals">
+    <li class="meal" ng-repeat="meal in meals">
         <h4 class="name">{{meal.name}}</h4>
         <img class="image" ng-src="{{meal.url}}">
         <p class="description">{{meal.description}}</p>
         <p class="price">{{meal.price}}</p>
         <p><button ng-click="addToOrder(meal)">Add To Your Order</button></p>
     </li>
-</ul>
+</ul-->

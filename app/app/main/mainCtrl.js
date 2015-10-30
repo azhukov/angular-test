@@ -8,14 +8,14 @@
  * Controller of the jstestApp
  */
 angular.module('jstestApp')
-  .controller('MainCtrl', ['$scope', 'MenuService', 'OrderModel', function ($scope, MenuService, OrderModel) {
+  .controller('MainCtrl', ['$scope', 'MenuService', 'orderModel', function ($scope, MenuService, orderModel) {
     $scope.menu = {};
     MenuService.get() //'/data/menu.json')
         .then(function(data) {
-      $scope.menu = data;
+      $scope.meals = data;
 
     });
-    $scope.order = OrderModel;
+    $scope.order = orderModel;
 
     $scope.addToOrder = function addToOrder(meal) {
       $scope.order.add(meal);

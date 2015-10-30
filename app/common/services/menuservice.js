@@ -8,7 +8,7 @@
  * Service in the jstestApp.
  */
 angular.module('jstestApp')
-	.factory('MenuService', ['$http','$q','MealModel', function ($http, $q, MealModel) {
+	.factory('MenuService', ['$http','MealModel', function ($http, MealModel) {
 		var service = {
 			get: get
 		};
@@ -16,32 +16,16 @@ angular.module('jstestApp')
 		return service;
 
 		function get () {
-        var deferred = $q.defer();
-
-        $http.get('/data/menu.json').success(function(data) {
-
-          // draft
-          if(angular.isArray(data.meals)) {
-            var res = [],
-                meals = data.meals;
-
-            for(var i=0; i< meals.length; i++) {
-              res.push(new MealModel(meals[i]))
-            }
-
-            data.meals = res;
-
-            deferred.resolve(data);
-          } else {
-            deferred.reject('wrong format'); //TODO: proper logging of errors
+      return $http.get('/data/menu.json').then(function (data) {
+        var res = [], meals;
+        meals = data.data.meals;
+        if (angular.isArray(meals)) {
+          for (var i = 0; i < meals.length; i++) {
+            res.push(new MealModel(meals[i]))
           }
-
-
-        }).error(function() {
-          deferred.reject('some error'); //TODO: proper logging of errors
-        });
-
-        return deferred.promise;
-      };
+        }
+        return res;
+      });
+    }
 	}]);
 

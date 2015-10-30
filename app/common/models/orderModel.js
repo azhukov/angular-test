@@ -2,7 +2,7 @@
 
 angular.module('test-app.common.models.order-model', []).
 
-  service('OrderModel', function () {
+  service('orderModel', function () {
     var total = 0;
 
     this.main = [];
@@ -31,7 +31,7 @@ angular.module('test-app.common.models.order-model', []).
         groupHash[meal.id] = groupHash[meal.id] + 1;
       }
 
-      total += this.Math.round(meal.price * 100);
+      total += Math.round(meal.price * 100);
 
       save();
     };
@@ -50,7 +50,7 @@ angular.module('test-app.common.models.order-model', []).
       if(cnt) {
         cnt--;
         groupHash[meal.id] = cnt;
-        total -= this.Math.round(meal.price * 100);
+        total -= Math.round(meal.price * 100);
 
         if(cnt == 0) {
           groupHash[meal.id] = null;

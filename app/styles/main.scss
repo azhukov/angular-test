@@ -1,2 +1,61 @@
-@import 'scales';
-@import 'typography';
+//@import 'scales';
+//@import 'typography';
+
+.header {
+  background-color: #C83C3B;
+  padding: 10px;
+}
+.body {
+  background-color: #F6F6F5;
+}
+.title {
+  font-weight: bold;
+  color: #525252;
+  font-size: 16px;
+  margin-top: 20px;
+}
+.carousel-inner {
+  position: relative;
+}
+.price {
+  background-color: #4868EF;
+  text-align: center;
+  padding: 5px 10px;
+  width: 100px;
+  margin-left: -50px;
+  color: #fff;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  font-style: italic;
+}
+.btn-default, .btn-default:hover {
+  background-color: #D4504F;
+  border-color: #B74447;
+  color: #fff
+}
+.carousel-caption {
+  left: 0;
+  right: 0;
+  background-color: #E8E4E1;
+  text-align: center;
+  opacity: 0.9;
+  bottom: 0;
+}
+
+.carousel-indicators {
+  bottom: 0;
+}
+.description {
+  padding: 20px 0;
+  background-color: #fff;
+}
+.description, button {
+  margin-top: 20px;
+  width: 100%;
+  padding: 0 10px;
+}
+.notes {
+  font-size: 10px;
+  margin-top: 10px;
+}
