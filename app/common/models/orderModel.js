@@ -2,13 +2,13 @@
 
 angular.module('test-app.common.models.order-model', []).
 
-  service('orderModel', function () {
+  service('orderModel',['localStorageService',  function (localStorageService) {
     var total = 0;
 
     this.main = [];
     this.other = [];
     this.mainHash = {};
-    this.otherHas = {};
+    this.otherHash = {};
 
     this.getTotal = function() {
       return (total/100).toFixed(2);
@@ -20,8 +20,8 @@ angular.module('test-app.common.models.order-model', []).
         group = this.main;
         groupHash = this.mainHash;
       } else {
-        group = this.main;
-        groupHash = this.mainHash;
+        group = this.other;
+        groupHash = this.otherHash;
       }
 
       if(!groupHash[meal.id]) {
@@ -42,8 +42,8 @@ angular.module('test-app.common.models.order-model', []).
         group = this.main;
         groupHash = this.mainHash;
       } else {
-        group = this.main;
-        groupHash = this.mainHash;
+        group = this.other;
+        groupHash = this.otherHash;
       }
 
       var cnt = groupHash[meal.id];
@@ -67,15 +67,32 @@ angular.module('test-app.common.models.order-model', []).
       save();
     };
 
-    function load() {
+    var that = this;
 
+    function load() {
+      var val = localStorageService.get('myOrder')
+
+      if(val) {
+        that.main = val.main;
+        that.mainHash = val.mainHash;
+        that.other = val.other;
+        that.otherHash = val.otherHash;
+        total = val.total;
+      }
     }
 
     function save() {
-
+      var val = {
+        main: that.main,
+        mainHash: that.mainHash,
+        other: that.other,
+        otherHash: that.otherHash,
+        total: total
+      };
+      localStorageService.set('myOrder', val)
     }
 
     load();
 
-  });
+  }]);
 

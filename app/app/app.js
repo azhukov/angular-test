@@ -17,10 +17,13 @@ angular
     'ngSanitize',
     'ngTouch',
     //'ui.router',
+    'LocalStorageModule',
     'test-app.common.models.meal-model',
     'test-app.common.models.order-model'
   ])
-  .config(function ($routeProvider) {
+  .config(function ($routeProvider,localStorageServiceProvider) {
+    localStorageServiceProvider.setPrefix('test-app');
+
     $routeProvider
       .when('/', {
         templateUrl: 'app/main/main.html',
